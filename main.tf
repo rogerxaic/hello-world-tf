@@ -9,7 +9,7 @@ provider "ibm" {
 }
 
 resource "ibm_is_vpc" "example" {
-  name = "example-vpc"
+  name = "example-vpc-unique"
 }
 
 terraform {
