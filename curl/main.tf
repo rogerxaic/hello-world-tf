@@ -1,5 +1,5 @@
 data "http" "example" {
-  url = "http://10.243.64.8:8000"
+  url = "https://petstore.swagger.io/v2/store/inventory"
 
   # Optional request headers
   request_headers = {
@@ -8,7 +8,7 @@ data "http" "example" {
 
   lifecycle {
     postcondition {
-      condition     = contains([401], self.status_code)
+      condition     = contains([200, 401], self.status_code)
       error_message = "Status code invalid"
     }
   }
