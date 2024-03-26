@@ -8,7 +8,7 @@ data "http" "example" {
 
   lifecycle {
     postcondition {
-      condition     = contains([200, 401], self.status_code)
+      condition     = contains([200], self.status_code)
       error_message = "Status code invalid"
     }
   }
